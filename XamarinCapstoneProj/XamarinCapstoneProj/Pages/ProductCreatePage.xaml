@@ -32,7 +32,7 @@
 
             <!-- https://xamgirl.com/validation-snippets-in-xamarin-forms/ -->
             
-            <Slider  x:Name="ProductPriceSlider" Minimum="0.0" Maximum="300" ThumbColor="Blue" MinimumTrackColor="Crimson" MaximumTrackColor="Crimson" ValueChanged="ProductPriceSlider_ValueChanged"></Slider>
+            <Slider  x:Name="ProductPriceSlider" Minimum="0.0" Maximum="300" ThumbColor="Crimson" MinimumTrackColor="Crimson" MaximumTrackColor="Crimson"></Slider>
             
             <Button Clicked="CreateNewProductBtn_Clicked" Text="Create Product" TextColor="White" BackgroundColor="Maroon" Padding="15">
                 

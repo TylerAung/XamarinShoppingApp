@@ -6,6 +6,13 @@
     <ContentPage.Resources>
         <Color x:Key="BdColor">Maroon</Color>
         <Color x:Key="BgColor">Maroon</Color>
+
+        <Style x:Key="sections" TargetType="Frame">
+            <Setter Property="BorderColor" Value="{StaticResource Key=BdColor}"></Setter>
+            <Setter Property="CornerRadius" Value="10"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
         <!--
         <Style x:Key="sections" TargetType="CollectionView">
             <Setter Property="BorderColor" Value="{StaticResource Key=BdColor}"></Setter>
@@ -17,12 +24,53 @@
     <ContentPage.Content>
 
         <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto">
-            <CollectionView Grid.Row="0" Grid.Column="1" SelectionMode="Single" x:Name="ProductListCollectionView" BackgroundColor="DarkKhaki" HeightRequest="635" >
+            <CollectionView Grid.Row="0" Grid.Column="1" SelectionMode="Single" 
+                            x:Name="ProductListCollectionView"
+                            HeightRequest="635" Margin="5, 0">
                 <CollectionView.EmptyView>
                     <Grid>
-                        
+                        <Frame
+                            Margin="7"
+                            BorderColor="Maroon"
+                            HasShadow="True">
+                            <Label
+                                FontSize="Medium"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Sorry! no courses available yet."
+                                VerticalOptions="CenterAndExpand" />
+                        </Frame>
                     </Grid>
                 </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame HasShadow="True" Style="{StaticResource sections}" >
+                                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="50, 245, 50" >
+                                    <Label Grid.Row="0" Grid.Column="0" 
+                                           FontAttributes="Bold" 
+                                           Text="{Binding Id, StringFormat='ID: {0}'}"
+                                           LineBreakMode="TailTruncation"
+                                            ></Label>
+                                    <Label Grid.Row="0" Grid.Column="1" 
+                                           FontAttributes="Bold" 
+                                           Text="{Binding ProductName}"
+                                           LineBreakMode="TailTruncation" ></Label>
+                                    <Label Grid.Row="0" Grid.Column="2" 
+                                           FontAttributes="Bold" 
+                                           Text="{Binding Price, StringFormat='${0}'}"
+                                           LineBreakMode="TailTruncation"
+                                           ></Label>
+                                    <Label Grid.Row="1" Grid.ColumnSpan="3" 
+                                           FontAttributes="Bold" 
+                                           Text="{Binding Description}"
+                                           ></Label>
+
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
             </CollectionView>
             <Button x:Name="AddNewProductButton" Text="Create New Product" Clicked="AddNewProductButton_Clicked" Grid.Row="1" Grid.Column="1" BackgroundColor="Maroon" TextColor="White">
             </Button>  

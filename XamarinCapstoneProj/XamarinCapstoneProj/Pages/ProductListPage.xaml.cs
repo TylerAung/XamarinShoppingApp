@@ -28,12 +28,19 @@ namespace XamarinCapstoneProj.Pages
 
             //Get FilePath and initialize the file
             string dataFilePath = Path.Combine(FileSystem.AppDataDirectory, "ProductListData.json");
-            //Create Collection Model for Data
-            List<Products> productList = new List<Products>();
-            // i) Yes, previously saved data exists then initialize it
-            string currentDataJson = File.ReadAllText(dataFilePath);
-            // ii) Load previously saved data into a list --> productList(List Model) variable
-            productList = JsonConvert.DeserializeObject<List<Products>>(currentDataJson);
+
+            if (File.Exists(dataFilePath))
+            {
+                //Create Collection Model for Data
+                List<Products> productList = new List<Products>();
+                // i) Yes, previously saved data exists then initialize it
+                string currentDataJson = File.ReadAllText(dataFilePath);
+                // ii) Load previously saved data into a list --> productList(List Model) variable
+                productList = JsonConvert.DeserializeObject<List<Products>>(currentDataJson);
+
+                ProductListCollectionView.ItemsSource = productList;
+            }
+
         }
 
         private async void AddNewProductButton_Clicked(object sender, EventArgs e)

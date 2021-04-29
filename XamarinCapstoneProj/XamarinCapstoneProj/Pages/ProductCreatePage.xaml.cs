@@ -77,7 +77,7 @@ namespace XamarinCapstoneProj.Pages
                 await this.Navigation.PopAsync();
             }
             //To tap into resources file created
-            //XamarinCapstoneProj.Properties.Resources.Author;
+           //XamarinCapstoneProj.Properties.Resources.Author.;
 
         }
 

@@ -68,15 +68,15 @@ namespace XamarinCapstoneProj
 
         private string GetGreetingText()
         {
-            if (DateTime.Now.Hour < 6 && DateTime.Now.Hour > 12)
+            if (DateTime.Now.Hour >= 6 && DateTime.Now.Hour <= 12)
             {
                 this.LblGreetings.Text = "Good Morning To You";
             }
-            else if (DateTime.Now.Hour < 12 && DateTime.Now.Hour > 17)
+            else if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour <= 17)
             {
                 this.LblGreetings.Text = "Good Afternoon To You";
             }
-            else if (DateTime.Now.Hour < 17 && DateTime.Now.Hour > 19)
+            else if (DateTime.Now.Hour >= 17 && DateTime.Now.Hour <= 19)
             {
                 this.LblGreetings.Text = "Good Evening To You";
             }
