@@ -6,29 +6,25 @@
     <ContentPage.Resources>
         <Color x:Key="BdColor">Maroon</Color>
         <Color x:Key="BgColor">Maroon</Color>
-        
-        <Style x:Key="sections" TargetType="Frame">
+        <!--
+        <Style x:Key="sections" TargetType="CollectionView">
             <Setter Property="BorderColor" Value="{StaticResource Key=BdColor}"></Setter>
             <Setter Property="CornerRadius" Value="10"></Setter>
             <Setter Property="Padding" Value="10"></Setter>
         </Style>
+        -->
     </ContentPage.Resources>
     <ContentPage.Content>
 
-        <Grid RowDefinitions="Auto, Auto" >
-            <CollectionView Grid.Row="0" SelectionMode="Single" x:Name="ProductListCollectionView">
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto">
+            <CollectionView Grid.Row="0" Grid.Column="1" SelectionMode="Single" x:Name="ProductListCollectionView" BackgroundColor="DarkKhaki" HeightRequest="635" >
                 <CollectionView.EmptyView>
                     <Grid>
                         
                     </Grid>
                 </CollectionView.EmptyView>
             </CollectionView>
-            <Button
-	        x:Name="AddNewProductButton"
-	        Text="Create New Course"
-	        Clicked="AddNewProductButton_Clicked"
-	        Grid.Row="1">
-                
+            <Button x:Name="AddNewProductButton" Text="Create New Product" Clicked="AddNewProductButton_Clicked" Grid.Row="1" Grid.Column="1" BackgroundColor="Maroon" TextColor="White">
             </Button>  
         </Grid>
 

@@ -3,13 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinCapstoneProj.Pages.ProductCreatePage"
              Title="Product Creation Page">
-    
+
+    <ContentPage.Resources>
+        <Style x:Key="frame" TargetType="Label">
+            <Setter Property="Padding" Value="20,15,20,0"></Setter>
+        </Style>
+        <Style x:Key="tbControl" TargetType="Entry">
+            <Setter Property="WidthRequest" Value="380"></Setter>
+            <Setter Property="HorizontalOptions" Value="Center"></Setter>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            
-            
+              
+            <Label Text="Product ID" Style="{StaticResource frame}"></Label>
+            <Entry x:Name="ProductIdEntry" Keyboard="Numeric" MaxLength="4" Placeholder="Product ID (Max 4 Chars)" Style="{StaticResource tbControl}"></Entry>
+            <Label Text="Product Name"  Style="{StaticResource frame}"></Label>
+            <Entry x:Name="ProductNameEntry" Keyboard="Text" Placeholder="Product Name" Style="{StaticResource tbControl}"></Entry>
+            <Label Text="Description"  Style="{StaticResource frame}"></Label>
+            <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description" Style="{StaticResource tbControl}"></Entry>
 
-            <Button Clicked="CreateNewProductBtn_Clicked" Text="Create Product">
+            <Label BindingContext="" 
+                   Text="{Binding Source={x:Reference ProductPriceSlider}, 
+                Path=Value, StringFormat='Product Price is ${0:F0}'}"
+                   HorizontalOptions="CenterAndExpand"
+                   Style="{StaticResource frame}">
+            </Label>
+
+            <!-- https://xamgirl.com/validation-snippets-in-xamarin-forms/ -->
+            
+            <Slider  x:Name="ProductPriceSlider" Minimum="0.0" Maximum="300" ThumbColor="Blue" MinimumTrackColor="Crimson" MaximumTrackColor="Crimson" ValueChanged="ProductPriceSlider_ValueChanged"></Slider>
+            
+            <Button Clicked="CreateNewProductBtn_Clicked" Text="Create Product" TextColor="White" BackgroundColor="Maroon" Padding="15">
                 
             </Button>
         </StackLayout>

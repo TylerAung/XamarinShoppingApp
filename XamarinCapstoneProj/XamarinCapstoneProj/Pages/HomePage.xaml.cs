@@ -130,6 +130,9 @@ namespace XamarinCapstoneProj
         {
             // TODO
             var deviceLocation = await Geolocation.GetLastKnownLocationAsync();
+            //GetLastKnownLocationAsync(); will return the old value
+            //GetLocationAsync(); to get current location
+
             if (deviceLocation != null)
             {
                 SetLocationData(deviceLocation);
