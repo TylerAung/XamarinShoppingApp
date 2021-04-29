@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:XamarinCapstoneProj.Extensions;assembly=XamarinCapstoneProj"
+             x:Class="XamarinCapstoneProj.HomePage"
+             xmlns:vm ="clr-namespace:XamarinCapstoneProj.Models"
+             Title="Pro Sports Mart" >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Products" Clicked="ProductsBtn_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:WeatherDataItem x:Key="WSData" ></vm:WeatherDataItem>
+
+            <Color x:Key="BdColor">Maroon</Color>
+            <!---->
+            <Style x:Key="sections" TargetType="Frame">
+                <Setter Property="BorderColor" Value="{StaticResource Key=BdColor}"></Setter>
+                <Setter Property="CornerRadius" Value="10"></Setter>
+                <Setter Property="Padding" Value="10"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10, 20" RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*">
+            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource Key=sections}">
+                <StackLayout>
+                    <Label Text="Welcome To Pro Sports Mart" TextColor="DarkBlue" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+                    <Label TextColor="Navy">
+                        <Label.Text>Improve Your Biomechanics and Learn Scientific Principles of Training Join us at one of our 9 courses all over the continental United States, Canada, and Europe in 2020. Our in-house staff of educators and coaches currently teach two courses: Principles of Loaded Movement and Advanced Athlete Preparation. Make sure to sign up for our Early Access Discount Program on each course page to save up to $100 on registration.</Label.Text>
+                    </Label>
+                    <Image Source="{extensions:ImageResource XamarinCapstoneProj.Resources.Images.sprinter.jpg}"></Image>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="1" Grid.Column="0" Style="{StaticResource Key=sections}">
+                <StackLayout>
+                    <Label FontSize="Medium" Text="Good Day To You" x:Name="LblGreetings"></Label>
+                    <Label FontSize="Small" Text="Closest Mart to you in 4km Away" x:Name="LblLocation"></Label>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="0" Style="{StaticResource Key=sections}">
+
+                <StackLayout Orientation="Vertical" >
+                    <Label Text="Fetching Location..." FontSize="Medium" x:Name="LblWeatherLocation"></Label>
+                    <ScrollView Orientation="Horizontal">
+                        <Grid ColumnDefinitions="Auto,Auto,Auto" RowDefinitions="Auto" x:Name="WeatherDataGrid" IsVisible="False">
+                            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource Key=sections}">
+                                <StackLayout>
+                                    <Label Text="Today" FontAttributes="Bold"></Label>
+                                    <Label Text="Today" x:Name="LblTodayWS"></Label>
+                                    <Label Text="Today" x:Name="LblTodayTemp"></Label>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="1"  Style="{StaticResource Key=sections}">
+                                <StackLayout>
+                                    <Label Text="Tomorrow" FontAttributes="Bold"></Label>
+                                    <Label Text="Tomorrow" x:Name="LblTomorrowWS"></Label>
+                                    <Label Text="Tomorrow" x:Name="LblTomorrowTemp"></Label>
+                                </StackLayout>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource Key=sections}">
+                                <StackLayout>
+                                    <Label Text="Following Day" FontAttributes="Bold"></Label>
+                                    <Label Text="Following" x:Name="LblFollowingWS"></Label>
+                                    <Label Text="Following" x:Name="LblFollowingTemp"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ScrollView>
+                    <!-- -->
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

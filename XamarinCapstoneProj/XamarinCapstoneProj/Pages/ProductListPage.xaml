@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinCapstoneProj.Pages.ProductListPage"
+             Title="Product List Page">
+    <ContentPage.Resources>
+        <Color x:Key="BdColor">Maroon</Color>
+        <Color x:Key="BgColor">Maroon</Color>
+        
+        <Style x:Key="sections" TargetType="Frame">
+            <Setter Property="BorderColor" Value="{StaticResource Key=BdColor}"></Setter>
+            <Setter Property="CornerRadius" Value="10"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="Auto, Auto" >
+            <CollectionView Grid.Row="0" SelectionMode="Single" x:Name="ProductListCollectionView">
+                <CollectionView.EmptyView>
+                    <Grid>
+                        
+                    </Grid>
+                </CollectionView.EmptyView>
+            </CollectionView>
+            <Button
+	        x:Name="AddNewProductButton"
+	        Text="Create New Course"
+	        Clicked="AddNewProductButton_Clicked"
+	        Grid.Row="1">
+                
+            </Button>  
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
