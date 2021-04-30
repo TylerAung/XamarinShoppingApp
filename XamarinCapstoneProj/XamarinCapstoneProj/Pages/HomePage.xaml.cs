@@ -25,6 +25,9 @@ namespace XamarinCapstoneProj
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            this.OpeningText.Text = XamarinCapstoneProj.Properties.Resources.Homepage;
+
             try
             {
                 await GetDeviceLocation();
