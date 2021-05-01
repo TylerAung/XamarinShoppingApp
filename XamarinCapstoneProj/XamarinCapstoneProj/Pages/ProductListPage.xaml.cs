@@ -47,5 +47,13 @@ namespace XamarinCapstoneProj.Pages
         {
             await Navigation.PushAsync(new ProductCreatePage());
         }
+
+        private void ProductListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Get Data of selection
+            Products selectedProduct = (Products)e.CurrentSelection.First();
+            //Navigate to Page with Data Collected
+            this.Navigation.PushAsync(new ProductViewPage(selectedProduct));
+        }
     }
 }

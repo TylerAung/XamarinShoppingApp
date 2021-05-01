@@ -24,9 +24,11 @@
     <ContentPage.Content>
 
         <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto">
-            <CollectionView Grid.Row="0" Grid.Column="1" SelectionMode="Single" 
+            <CollectionView Grid.Row="0" Grid.Column="1" 
                             x:Name="ProductListCollectionView"
-                            HeightRequest="635" Margin="5, 0">
+                            HeightRequest="635" Margin="5, 0"
+                            SelectionChanged="ProductListCollectionView_SelectionChanged"
+                            SelectionMode="Single">
                 <CollectionView.EmptyView>
                     <Grid>
                         <Frame

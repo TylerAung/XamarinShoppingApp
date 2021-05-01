@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinCapstoneProj.Pages.ProductViewPage"
+             Title="Product View Page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+            <Label x:Name="LblProductId"></Label>
+            <Label x:Name="LblProductName"></Label>
+            </StackLayout>
+            
+            <Grid RowDefinitions="1" ColumnDefinitions="2">
+                <Button Text="Delete" x:Name="btnDelete" Clicked="btnDelete_Clicked"></Button>
+                <Button Text="Edit" x:Name="btnEdit" Clicked="btnEdit_Clicked"></Button>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
