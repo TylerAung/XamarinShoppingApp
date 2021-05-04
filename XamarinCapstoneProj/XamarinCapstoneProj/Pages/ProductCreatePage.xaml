@@ -3,36 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinCapstoneProj.Pages.ProductCreatePage"
              Title="Product Creation Page">
-
+    <!-- xmlns:behaviour="clr-namespace:XamarinCapstoneProj.Helpers.Behaviours"
+             xmlns:convertor="clr-namespace:XamarinCapstoneProj.Helpers.Converters"-->
     <ContentPage.Resources>
-        <Style x:Key="frame" TargetType="Label">
-            <Setter Property="Padding" Value="20,15,20,0"></Setter>
-        </Style>
-        <Style x:Key="tbControl" TargetType="Entry">
-            <Setter Property="WidthRequest" Value="380"></Setter>
-            <Setter Property="HorizontalOptions" Value="Center"></Setter>
-        </Style>
+        <ResourceDictionary>
+            <!--<convertor:InverseBoolConverter x:Key="InverseBoolConvertor"/>
+            <convertor:FirstValidationErrorConverter x:Key="FirstValidationErrorConvertor"/> -->
+            <Style x:Key="frame" TargetType="Label">
+                <Setter Property="Padding" Value="20,15,20,0"></Setter>
+            </Style>
+            <Style x:Key="tbControl" TargetType="Entry">
+                <Setter Property="WidthRequest" Value="380"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+            </Style>
+            <Style x:Key="ErrorTextStyle" TargetType="Label">
+                <Setter Property="TextColor">Crimson</Setter>
+            </Style>
+        </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-              
+             
+            <!--Product ID-->
             <Label Text="Product ID" Style="{StaticResource frame}"></Label>
-            <Entry x:Name="ProductIdEntry" Keyboard="Numeric" MaxLength="4" Placeholder="Product ID (Max 4 Chars)" Style="{StaticResource tbControl}"></Entry>
+            <Entry x:Name="ProductIdEntry" Keyboard="Numeric" MaxLength="4" 
+                   Placeholder="Product ID (Max 4 Chars)" Style="{StaticResource tbControl}">
+                <!-- <Entry.Behaviors>
+                    <behaviour:EntryLineValidationBehaviour IsValid="{Binding pvmId.IsValid}"/>
+                </Entry.Behaviors>-->
+            </Entry>
+            <!--
+            <Label Text="{Binding pvmId.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                        IsVisible="{Binding pvmId.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                        Style="{StaticResource ErrorTextStyle}"/>-->
+            <!--/Product ID-->
+
+            <!--Product Name-->
             <Label Text="Product Name"  Style="{StaticResource frame}"></Label>
             <Entry x:Name="ProductNameEntry" Keyboard="Text" Placeholder="Product Name" Style="{StaticResource tbControl}"></Entry>
+
+            <!--/Product Name-->
+
+            <!--Product Description-->
             <Label Text="Description"  Style="{StaticResource frame}"></Label>
             <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description" Style="{StaticResource tbControl}"></Entry>
 
+            <!--/Product Description-->
+
+            <!--Product Price-->
             <Label BindingContext="" 
                    Text="{Binding Source={x:Reference ProductPriceSlider}, 
                 Path=Value, StringFormat='Product Price is ${0:F0}'}"
                    HorizontalOptions="CenterAndExpand"
                    Style="{StaticResource frame}">
             </Label>
-
-            <!-- https://xamgirl.com/validation-snippets-in-xamarin-forms/ -->
-            
             <Slider  x:Name="ProductPriceSlider" Minimum="0.0" Maximum="300" ThumbColor="Crimson" MinimumTrackColor="Crimson" MaximumTrackColor="Crimson"></Slider>
+            <!--/Product Price-->
             
             <Button Clicked="CreateNewProductBtn_Clicked" Text="Create Product" TextColor="White" BackgroundColor="Maroon" Padding="15">
                 

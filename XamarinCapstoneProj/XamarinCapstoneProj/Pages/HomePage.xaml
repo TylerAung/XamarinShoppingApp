@@ -24,41 +24,43 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid Padding="10, 20" RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*">
-            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource Key=sections}">
+        <ScrollView Orientation="Vertical" Margin="7">
+            
+        <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="Auto">
+            <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource Key=sections}">
                 <StackLayout>
                     <Label Text="Welcome To Pro Sports Mart" TextColor="DarkBlue" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
                     <Label TextColor="Navy" x:Name="OpeningText"></Label>
                     <Image Source="{extensions:ImageResource XamarinCapstoneProj.Resources.Images.sprinter.jpg}"></Image>
                 </StackLayout>
             </Frame>
-            <Frame Grid.Row="1" Grid.Column="0" Style="{StaticResource Key=sections}">
+            <Frame Grid.Row="2" Grid.Column="1" Style="{StaticResource Key=sections}">
                 <StackLayout>
                     <Label FontSize="Medium" Text="Good Day To You" x:Name="LblGreetings"></Label>
                     <Label FontSize="Small" Text="Closest Mart to you in 4km Away" x:Name="LblLocation"></Label>
                 </StackLayout>
             </Frame>
-            <Frame Grid.Row="2" Grid.Column="0" Style="{StaticResource Key=sections}">
+            <Frame Grid.Row="3" Grid.Column="1" Style="{StaticResource Key=sections}" Padding="20">
 
                 <StackLayout Orientation="Vertical" >
                     <Label Text="Fetching Location..." FontSize="Medium" x:Name="LblWeatherLocation"></Label>
                     <ScrollView Orientation="Horizontal">
                         <Grid ColumnDefinitions="Auto,Auto,Auto" RowDefinitions="Auto" x:Name="WeatherDataGrid" IsVisible="False">
-                            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource Key=sections}">
+                            <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource Key=sections}">
                                 <StackLayout>
                                     <Label Text="Today" FontAttributes="Bold"></Label>
                                     <Label Text="Today" x:Name="LblTodayWS"></Label>
                                     <Label Text="Today" x:Name="LblTodayTemp"></Label>
                                 </StackLayout>
                             </Frame>
-                            <Frame Grid.Row="0" Grid.Column="1"  Style="{StaticResource Key=sections}">
+                            <Frame Grid.Row="1" Grid.Column="2"  Style="{StaticResource Key=sections}">
                                 <StackLayout>
                                     <Label Text="Tomorrow" FontAttributes="Bold"></Label>
                                     <Label Text="Tomorrow" x:Name="LblTomorrowWS"></Label>
                                     <Label Text="Tomorrow" x:Name="LblTomorrowTemp"></Label>
                                 </StackLayout>
                             </Frame>
-                            <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource Key=sections}">
+                            <Frame Grid.Row="1" Grid.Column="3" Style="{StaticResource Key=sections}">
                                 <StackLayout>
                                     <Label Text="Following Day" FontAttributes="Bold"></Label>
                                     <Label Text="Following" x:Name="LblFollowingWS"></Label>
@@ -71,6 +73,7 @@
                 </StackLayout>
             </Frame>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

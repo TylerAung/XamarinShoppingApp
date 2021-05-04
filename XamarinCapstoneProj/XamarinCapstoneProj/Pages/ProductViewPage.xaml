@@ -9,16 +9,27 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid>
-            <StackLayout>
-            <Label x:Name="LblProductId"></Label>
-            <Label x:Name="LblProductName"></Label>
+        <StackLayout Orientation="Vertical">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,Auto">
+                    <Label Text="Product ID:" Grid.Row="1" Grid.Column="1" ></Label>
+                    <Label x:Name="LblProductId" Grid.Row="1" Grid.Column="2"></Label>
+
+                    <Label Text="Product Name:" Grid.Row="2" Grid.Column="1"></Label>
+                    <Label x:Name="LblProductName"  Grid.Row="2" Grid.Column="2"></Label>
+
+                    <Label Text="Product Desc:" Grid.Row="3" Grid.Column="1"></Label>
+                    <Label x:Name="LblProductDesc"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+
+                    <Label Text="Product Price:" Grid.Row="5" Grid.Column="1"></Label>
+                    <Label x:Name="LblProductPrice" Grid.Row="5" Grid.Column="2"></Label>
+                </Grid>
             </StackLayout>
-            
-            <Grid RowDefinitions="1" ColumnDefinitions="2">
-                <Button Text="Delete" x:Name="btnDelete" Clicked="btnDelete_Clicked"></Button>
-                <Button Text="Edit" x:Name="btnEdit" Clicked="btnEdit_Clicked"></Button>
-            </Grid>
-        </Grid>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Delete" x:Name="btnDelete" Clicked="btnDelete_Clicked" BackgroundColor="Orange" WidthRequest="175"></Button>
+                <Button Text="Edit" x:Name="btnEdit" Clicked="btnEdit_Clicked" BackgroundColor="Chartreuse" WidthRequest="175"></Button>
+            </StackLayout>
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

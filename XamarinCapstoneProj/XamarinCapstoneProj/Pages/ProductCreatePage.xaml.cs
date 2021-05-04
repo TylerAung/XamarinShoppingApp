@@ -10,6 +10,7 @@ using XamarinCapstoneProj.Models;
 using Newtonsoft.Json;
 using System.IO;
 using Xamarin.Essentials;
+using XamarinCapstoneProj.Models.ViewModels;
 
 namespace XamarinCapstoneProj.Pages
 {
@@ -19,6 +20,14 @@ namespace XamarinCapstoneProj.Pages
         public ProductCreatePage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var product = new Products();
+
+            this.BindingContext = new ProductsViewModel(product);
         }
 
         private async void CreateNewProductBtn_Clicked(object sender, EventArgs e)
