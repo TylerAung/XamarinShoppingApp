@@ -88,9 +88,20 @@ namespace XamarinCapstoneProj.Pages
             }
         }
 
-        private void btnEdit_Clicked(object sender, EventArgs e)
+        private async void btnEdit_Clicked(object sender, EventArgs e)
         {
+            var editProduct = new Products
+            {
+                Id = Convert.ToInt32(this.LblProductId.Text),
+                ProductName = this.LblProductName.Text,
+                Description = this.LblProductDesc.Text,
+                Price = Convert.ToDecimal(this.LblProductPrice.Text.Replace("$", String.Empty))
 
+            };
+            //Won't work unless done in constructor or onAppearing of class
+            //var editPage = new ProductEditPage(editProduct);
+            //editPage.BindingContext = editProduct;
+            await this.Navigation.PushAsync(new ProductEditPage(editProduct));
         }
     }
 }

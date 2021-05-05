@@ -43,7 +43,7 @@
                         </Frame>
                     </Grid>
                 </CollectionView.EmptyView>
-
+                <!-- CollectionView.ItemTemplate => For every single item, how should it be displayed-->
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
