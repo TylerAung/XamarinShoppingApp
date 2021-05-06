@@ -1,16 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinCapstoneProj.Pages.ProductEditPage">
+             x:Class="XamarinCapstoneProj.Pages.ProductEditPage"
+             Title="Product Edit Page">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="LblEditId"></Label>
-            <Label x:Name="LblEditName" Text="{Binding editProduct.Name}"></Label>
-            <Label x:Name="LblEditPrice"></Label>
-            <Label x:Name="LblEditDesc"></Label>
+        <StackLayout Margin="0,0,6,0">
+                <StackLayout VerticalOptions="FillAndExpand" Margin="7,0">
+                    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto">
+            
+                        <Label Text="Product ID:" Grid.Row="1" Grid.Column="1" FontSize="Medium"></Label>
+                    <Label x:Name="LblEditId" Grid.Row="1" Grid.Column="2" FontSize="Medium"></Label>
+            
+                        <!--Product Name-->
+                    <Label Text="Product Name:" Grid.Row="2" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center" ></Label>
+                        <Entry x:Name="ProductNameEntry" Keyboard="Text" Placeholder="Product Name" Grid.Row="2" Grid.Column="2"></Entry>
 
-            <Button x:Name="BtnBack" Text="Back" Clicked="BtnBack_Clicked"></Button>
-            <Button x:Name="BtnUpdate" Text="Update" Clicked="BtnUpdate_Clicked"></Button>
+                        <!--/Product Name-->
+
+                        <!--Product Description-->
+                    <Label Text="Description:" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium"></Label>
+                        <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="300" BackgroundColor="DarkGray" VerticalTextAlignment="Start"></Entry>
+
+                        <!--/Product Description-->
+            
+                        <!--Product Price-->
+                    <Label Text="Product Price(SGD)$:" Grid.Row="5" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center"></Label>
+                        <Entry x:Name="ProductPriceEntry" Keyboard="Numeric" Margin="0" Placeholder="Product Description" Grid.Row="5" Grid.Column="2"></Entry>
+                    </Grid>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,4" Spacing="15">
+                <Button x:Name="BtnBack" Text="Back" Clicked="BtnBack_Clicked" BackgroundColor="OrangeRed" WidthRequest="185"></Button>
+                <Button x:Name="BtnUpdate" Text="Update" Clicked="BtnUpdate_Clicked" BackgroundColor="#1f5550"  WidthRequest="185"></Button>
+            </StackLayout>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
+
+<!-- <Label x:Name="LblEditName" Text="{Binding editProduct.Name}"></Label>
+            <Label x:Name="LblEditPrice"></Label>
+            <Label x:Name="LblEditDesc"></Label>
+            -->

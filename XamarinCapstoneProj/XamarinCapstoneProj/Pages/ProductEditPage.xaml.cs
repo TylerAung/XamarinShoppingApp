@@ -22,9 +22,9 @@ namespace XamarinCapstoneProj.Pages
             // this.LblEditName.Text = 
             // _prod.Id = edit
             this.LblEditId.Text = Convert.ToString(prod.Id);
-            this.LblEditName.Text = prod.ProductName;
-            this.LblEditDesc.Text = prod.Description;
-            this.LblEditPrice.Text = Convert.ToString(prod.Price);
+            this.ProductNameEntry.Text = prod.ProductName;
+            this.ProductDescEntry.Text = prod.Description;
+            this.ProductPriceEntry.Text = Convert.ToString(prod.Price);
         }
 
         protected override void OnAppearing()

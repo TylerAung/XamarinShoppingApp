@@ -12,22 +12,22 @@
         <StackLayout Orientation="Vertical">
             <StackLayout VerticalOptions="FillAndExpand">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,Auto">
-                    <Label Text="Product ID:" Grid.Row="1" Grid.Column="1" ></Label>
-                    <Label x:Name="LblProductId" Grid.Row="1" Grid.Column="2"></Label>
+                    <Label Text="Product ID:" Grid.Row="1" Grid.Column="1" FontSize="Medium"></Label>
+                    <Label x:Name="LblProductId" Grid.Row="1" Grid.Column="2" FontSize="Medium"></Label>
 
-                    <Label Text="Product Name:" Grid.Row="2" Grid.Column="1"></Label>
-                    <Label x:Name="LblProductName"  Grid.Row="2" Grid.Column="2"></Label>
+                    <Label Text="Product Name:" Grid.Row="2" Grid.Column="1" FontSize="Medium"></Label>
+                    <Label x:Name="LblProductName"  Grid.Row="2" Grid.Column="2" FontSize="Medium"></Label>
 
-                    <Label Text="Product Desc:" Grid.Row="3" Grid.Column="1"></Label>
-                    <Label x:Name="LblProductDesc"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+                    <Label Text="Product Desc:" Grid.Row="3" Grid.Column="1" FontSize="Medium"></Label>
+                    <Label x:Name="LblProductDesc"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium"></Label>
 
-                    <Label Text="Product Price:" Grid.Row="5" Grid.Column="1"></Label>
-                    <Label x:Name="LblProductPrice" Grid.Row="5" Grid.Column="2"></Label>
+                    <Label Text="Product Price:" Grid.Row="5" Grid.Column="1" FontSize="Medium"></Label>
+                    <Label x:Name="LblProductPrice" Grid.Row="5" Grid.Column="2" FontSize="Medium"></Label>
                 </Grid>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="Delete" x:Name="btnDelete" Clicked="btnDelete_Clicked" BackgroundColor="Orange" WidthRequest="175"></Button>
-                <Button Text="Edit" x:Name="btnEdit" Clicked="btnEdit_Clicked" BackgroundColor="Chartreuse" WidthRequest="175"></Button>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,4" Spacing="15">
+                <Button Text="Delete" x:Name="btnDelete" Clicked="btnDelete_Clicked" BackgroundColor="Orange" WidthRequest="185"></Button>
+                <Button Text="Edit" x:Name="btnEdit" Clicked="btnEdit_Clicked" BackgroundColor="Chartreuse" WidthRequest="185"></Button>
             </StackLayout>
         </StackLayout>
         
