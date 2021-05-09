@@ -6,26 +6,51 @@
     <ContentPage.Content>
         <StackLayout Margin="0,0,6,0">
                 <StackLayout VerticalOptions="FillAndExpand" Margin="7,0">
-                    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, Auto">
-            
-                        <Label Text="Product ID:" Grid.Row="1" Grid.Column="1" FontSize="Medium"></Label>
-                    <Label x:Name="LblEditId" Grid.Row="1" Grid.Column="2" FontSize="Medium"></Label>
+                    <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="Auto">
+
+
+                    <Frame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderColor="Transparent" Padding="0">
+                        <Grid RowDefinitions="Auto" ColumnDefinitions="Auto,Auto">
+                            <Label Text="Product ID:" Grid.Row="1" Grid.Column="1" FontSize="Medium"></Label>
+                            <Label x:Name="LblEditId" Grid.Row="1" Grid.Column="2" FontSize="Medium"></Label>
+                        </Grid>
+                    </Frame>
+                        
+
             
                         <!--Product Name-->
-                    <Label Text="Product Name:" Grid.Row="2" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center" ></Label>
-                        <Entry x:Name="ProductNameEntry" Keyboard="Text" Placeholder="Product Name" Grid.Row="2" Grid.Column="2"></Entry>
 
-                        <!--/Product Name-->
+                    <Frame Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" BorderColor="Transparent" Padding="0">
+                        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto">
+                            <Label Text="Product Name:" Grid.Row="1" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center" ></Label>
+                            <Entry x:Name="ProductNameEntry" Keyboard="Text" Placeholder="Product Name" Grid.Row="1" Grid.Column="2"></Entry>
+                            <Label x:Name="ErrName" FontSize="Small" TextColor="Crimson" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Label>
+                        </Grid>
+                    </Frame>
 
-                        <!--Product Description-->
-                    <Label Text="Description:" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium"></Label>
-                        <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="300" BackgroundColor="DarkGray" VerticalTextAlignment="Start"></Entry>
+                    <!--/Product Name-->
+
+                    <!--Product Description-->
+
+                    <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Padding="0" BorderColor="Transparent">
+                        <Grid RowDefinitions="Auto, Auto, Auto">
+                            <Label Text="Description:" Grid.Row="1" FontSize="Medium"></Label>
+                            <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description"  Grid.Row="2" HeightRequest="300" BackgroundColor="DarkGray" VerticalTextAlignment="Start"></Entry>
+                            <Label x:Name="ErrDesc" FontSize="Small" TextColor="Crimson" Grid.Row="3" HorizontalTextAlignment="Center"></Label>
+                        </Grid>
+                    </Frame>
 
                         <!--/Product Description-->
             
                         <!--Product Price-->
-                    <Label Text="Product Price(SGD)$:" Grid.Row="5" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center"></Label>
-                        <Entry x:Name="ProductPriceEntry" Keyboard="Numeric" Margin="0" Placeholder="Product Description" Grid.Row="5" Grid.Column="2"></Entry>
+
+                    <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Padding="0" BorderColor="Transparent">
+                        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto" Padding="0">
+                            <Label Text="Product Price(SGD)$:" Grid.Row="1" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center"></Label>
+                            <Entry x:Name="ProductPriceEntry" Keyboard="Numeric" Margin="0" Placeholder="$50.00" Grid.Row="1" Grid.Column="2"></Entry>
+                            <Label x:Name="ErrPrice" FontSize="Small" TextColor="Crimson" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Label>
+                        </Grid>
+                    </Frame>
                     </Grid>
                 </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,4" Spacing="15">
