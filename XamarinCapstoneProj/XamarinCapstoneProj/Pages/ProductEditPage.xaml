@@ -35,7 +35,7 @@
                     <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Padding="0" BorderColor="Transparent">
                         <Grid RowDefinitions="Auto, Auto, Auto">
                             <Label Text="Description:" Grid.Row="1" FontSize="Medium"></Label>
-                            <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description"  Grid.Row="2" HeightRequest="300" BackgroundColor="DarkGray" VerticalTextAlignment="Start"></Entry>
+                            <Entry x:Name="ProductDescEntry" Keyboard="Text" Margin="0" Placeholder="Product Description"  Grid.Row="2" HeightRequest="300" BackgroundColor="#b0a9a9" VerticalTextAlignment="Start"></Entry>
                             <Label x:Name="ErrDesc" FontSize="Small" TextColor="Crimson" Grid.Row="3" HorizontalTextAlignment="Center"></Label>
                         </Grid>
                     </Frame>
@@ -54,8 +54,8 @@
                     </Grid>
                 </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,4" Spacing="15">
-                <Button x:Name="BtnBack" Text="Back" Clicked="BtnBack_Clicked" BackgroundColor="OrangeRed" WidthRequest="185"></Button>
-                <Button x:Name="BtnUpdate" Text="Update" Clicked="BtnUpdate_Clicked" BackgroundColor="#1f5550"  WidthRequest="185"></Button>
+                <Button x:Name="BtnBack" Text="Back" Clicked="BtnBack_Clicked" BackgroundColor="Orange" WidthRequest="185"></Button>
+                <Button x:Name="BtnUpdate" Text="Update" Clicked="BtnUpdate_Clicked" BackgroundColor="Chartreuse"  WidthRequest="185"></Button>
             </StackLayout>
         </StackLayout>
 

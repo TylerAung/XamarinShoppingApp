@@ -70,7 +70,9 @@ namespace XamarinCapstoneProj.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Improve Your Biomechanics and Learn Scientific Principles of Training Join us at one of our 9 courses all over the continental United States, Canada, and Europe in 2020. Our in-house staff of educators and coaches currently teach two courses: Principles of Loaded Movement and Advanced Athlete Preparation. Make sure to sign up for our Early Access Discount Program on each course page to save up to $100 on registration. Improve Your Biomechanics and Learn Scientific Principles of Training Join us at one of ou [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Kabuki Strength stands strongly on 4 pillars. We design, engineer, and manufacture novel strength equipment, provide research-based education, world-class coaching services, and by giving back and serving others in our community. 
+        ///
+        ///Improve Your Biomechanics and Learn Scientific Principles of Training Join us at one of our 9 courses all over the continental United States, Canada, and Europe in 2020. Our in-house staff of educators and coaches currently teach two courses: Principles of Loaded Movement and A [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Homepage {
             get {

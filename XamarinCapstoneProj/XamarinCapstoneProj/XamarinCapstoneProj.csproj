@@ -12,8 +12,11 @@
 
   <ItemGroup>
     <Compile Remove="NewFolder1\**" />
+    <Compile Remove="Resources\GitImg\**" />
     <EmbeddedResource Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="Resources\GitImg\**" />
     <None Remove="NewFolder1\**" />
+    <None Remove="Resources\GitImg\**" />
   </ItemGroup>
 
   <ItemGroup>
